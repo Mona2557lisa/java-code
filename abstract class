@@ -1,0 +1,56 @@
+// Abstract class
+abstract class Vehicle {
+
+    // Abstract methods
+    abstract void calculateSpeed(double distance, double time);
+    abstract void calculateVelocity(double displacement, double time);
+}
+
+// Car class
+class Car extends Vehicle {
+
+    @Override
+    void calculateSpeed(double distance, double time) {
+        double speed = distance / time;
+        System.out.println("Car Speed = " + speed + " km/hr");
+    }
+
+    @Override
+    void calculateVelocity(double displacement, double time) {
+        double velocity = displacement / time;
+        System.out.println("Car Velocity = " + velocity + " km/hr");
+    }
+}
+
+// Bike class
+class Bike extends Vehicle {
+
+    @Override
+    void calculateSpeed(double distance, double time) {
+        double speed = distance / time;
+        System.out.println("Bike Speed = " + speed + " km/hr");
+    }
+
+    @Override
+    void calculateVelocity(double displacement, double time) {
+        double velocity = displacement / time;
+        System.out.println("Bike Velocity = " + velocity + " km/hr");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+
+        Vehicle car = new Car();
+        Vehicle bike = new Bike();
+
+        System.out.println("---- Car Details ----");
+        car.calculateSpeed(100, 2);
+        car.calculateVelocity(80, 2);
+
+        System.out.println("\n---- Bike Details ----");
+        bike.calculateSpeed(60, 1.5);
+        bike.calculateVelocity(50, 1.5);
+    }
+}
